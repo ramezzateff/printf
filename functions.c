@@ -61,3 +61,12 @@ int print_escape_char(char c)
 	}
 	return (1);
 }
+int print_int(int dd, va_list pri)
+{
+	int asci;
+	if (dd == 'd')
+	{
+		if (ascii >= 48 && ascii <= 57)
+			_putchar('0' + dd)aktb 
+	}
+}
