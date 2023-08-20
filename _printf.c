@@ -13,11 +13,11 @@ int _printf(const char *format, ...)
 	unsigned int i, count = 0;
 
 	va_start(pri, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	if (format[0] == '%' && foramt[1] == ' ' && format[2] == '\0')
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i]; i++)
 	{
 		if (format[i] != '%' && format[i] != '\\')
 		{
