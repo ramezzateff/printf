@@ -8,8 +8,8 @@
   */
 int print_normal_char(char c)
 {
-	_putchar(c);
-	return (1);
+	return(_putchar(c));
+	
 }
 
 /**
@@ -60,13 +60,4 @@ int print_escape_char(char c)
 		_putchar('\n');
 	}
 	return (1);
-}
-int print_int(int dd, va_list pri)
-{
-	int asci;
-	if (dd == 'd')
-	{
-		if (ascii >= 48 && ascii <= 57)
-			_putchar('0' + dd)aktb 
-	}
 }
