@@ -7,5 +7,6 @@
  */
 int print_percentage(va_list pri)
 {
+	(void)pri;
 	return (_putchar('%'));
 }

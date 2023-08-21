@@ -22,13 +22,21 @@ int _printf(const char *format, ...)
 		if (format[i] != '%' && format[i] != '\\')
 		{
 			_putchar(format[i]);
+			count++;
 		}
 		else if (format[i] == '%')
 		{
 			i++;
-			if (get_function(format[i] != NULL))
-				count += call_function(ci, pri);
-			
+			if (get_function(format[i]))
+				count += call_func(format[i], pri);
+		}
+		else if (format[i] == '\\')
+		{
+			i++;
+			if (format[i] == 'n')
+				_putchar('\n');
+			else if (format[i] == 't')
+				_putchar('\t');
 		}
 	}
 	va_end(pri);
