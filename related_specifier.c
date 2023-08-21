@@ -2,14 +2,13 @@
 
 /**
   * get_function - finds the funciton related to character
-  * @c: the character to find the related function to
+  * @ch: the character to find the related function to
   *
   * Return: a pointer to the related function
   */
-int (*get_function(char c))(va_list pri)
+int (*get_function(char ch))(va_list pri)
 {
-	struct char_function specifiers[] = 
-	{
+	char_function specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percentage},
@@ -29,13 +28,25 @@ int (*get_function(char c))(va_list pri)
 
 	while (i < 14)
 	{
-		if (c == specifiers[i].c)
+		if (ch == specifiers[i].c)
 			return (specifiers[i].function_ptr);
-		i++
+		i++;
 	}
 	return (NULL);
 }
 
 /**
-  * print_func - calls the related function
-  * @c: the character to find related funciton with
+  * call_func - calls the related function
+  * @ch: character for the get_fucntion
+  * @pri: argument for the function
+  *
+  * Return: number of bytes printed
+  */
+int call_func(char ch, va_list pri)
+{
+	int (*ptr_to_function)(va_list pri) = get_function(ch);
+
+	if (*ptr_to_function != NULL)
+		return (f(pri));
+	return (0);
+}
