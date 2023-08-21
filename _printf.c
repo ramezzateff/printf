@@ -37,6 +37,7 @@ int _printf(const char *format, ...)
 				_putchar('\n');
 			else if (format[i] == 't')
 				_putchar('\t');
+			count++;
 		}
 	}
 	va_end(pri);
