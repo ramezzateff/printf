@@ -21,17 +21,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%' && format[i] != '\\')
 		{
-			count += print_normal_char(format[i]);
+			_putchar(format[i]);
 		}
 		else if (format[i] == '%')
 		{
-			count += print_variable(format[i + 1], pri);
 			i++;
-		}
-		else if (format[i] == '\\')
-		{
-			print_escape_char(format[i + 1]);
-			i++;
+			if (get_function(format[i] != NULL))
+				count += call_function(ci, pri);
+			
 		}
 	}
 	va_end(pri);
