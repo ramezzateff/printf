@@ -7,7 +7,9 @@
  */
 int print_char(va_list pri)
 {
-	const char *c = va_arg(pri, char);
+	char c;
+
+	c = va_arg(pri, int);
 
 	_putchar(c);
 	return (1);

@@ -8,10 +8,11 @@
  */
 int print_hex(va_list pri)
 {
-	int num, i = 0, rem, count = 0;
-	char hex_arr[100];
+	int num = va_arg(pri, int);
+	int i = 0, rem, count = 0;
+	int hex_arr[100];
 
-	if (number == 0)
+	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
@@ -26,12 +27,13 @@ int print_hex(va_list pri)
 			hex_arr[i] = 'A' + (rem - 10);
 
 		num = num / 16;
+		i++;
 	}
 	count = i;
 	for (i = count - 1; i >= 0; i--)
 	{
 		_putchar(hex_arr[i]);
-		count++;
+		count--;
 	}
 	return (count);
 }
