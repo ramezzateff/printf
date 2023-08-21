@@ -7,7 +7,8 @@
 #include <unistd.h>
 
 /**
-  * struct char_function - structure that has character and pointer to related function
+  * struct char_function - structure that has character
+  * and pointer to related function
   * @c: the character
   * @func_ptr: pointer to the related function of c
   *
