@@ -32,9 +32,7 @@ int print_int(va_list pri);
 int print_binary(va_list pri);
 int print_hex(va_list pri);
 
-<<<<<<< HEAD
-#endif /* MAIN_H */
-=======
+int (*get_function(char ch))(va_list pri);
+int call_func(char ch, va_list pri);
 
 #endif /* _PRINTF_H */
->>>>>>> e113f9c528b1743e95dea66e7322ee5d97fb516d
