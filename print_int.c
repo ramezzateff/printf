@@ -7,30 +7,22 @@
  */
 int print_int(va_list pri)
 {
-	int i, count = 0;
-	int number = va_arg(pri, int);
+	int divisor = 1;
+	int temp = va_arg(pri, int);
+	int count = 0;
 
-	if (number < 0)
+	if (temp < 0)
 	{
 		_putchar('-');
-		number = -number;
+		temp *= -1;
+		count++;
 	}
-
-	int digit = 1;
-	int numD = number;
-
-	while (numD /= 10)
-		digit++;
-	char fig[digit + 1];
-
-	for (i = digit - 1; i >= 0; i--)
+	while ((temp / divisor) > 9)
+		divisor *= 10;
+	for (; divisor != 0; divisor /= 10)
 	{
-		fig[i] = '0' + (number % 10);
-		number /= 10;
-	}
-	for (i = 0; i < digit; i++)
-	{
-		_putchar(fig[i]);
+		_putchar('0' + (temp / divisor));
+		temp %= divisor;
 		count++;
 	}
 	return (count);

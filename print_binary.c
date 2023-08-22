@@ -8,7 +8,7 @@
 int print_binary(va_list pri)
 {
 	int a[20], rem, i = 0, count;
-	int numb = va_arg(pri, int);
+	unsigned int numb = va_arg(pri, unsigned int);
 
 	if (numb == 0)
 	{
@@ -19,7 +19,8 @@ int print_binary(va_list pri)
 	while (numb != 0)
 	{
 		rem = numb % 2;
-		a[i++] = rem;
+		a[i] = rem;
+		i++;
 		numb = numb / 2;
 	}
 

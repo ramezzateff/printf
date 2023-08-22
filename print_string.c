@@ -14,6 +14,7 @@ int print_string(va_list pri)
 	{
 		_putchar(*c);
 		c++;
+		count++;
 	}
 	return (count);
 }

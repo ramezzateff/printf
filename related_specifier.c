@@ -8,28 +8,31 @@
   */
 int (*get_function(char ch))(va_list pri)
 {
-	char_function specifiers[] = {
+	char_to_function specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percentage},
 		{'d', print_int},
 		{'i', print_int},
 		{'b', print_binary},
-		{'u', print_unsigned},
-		{'o', print_oct},
-		{'x', print_hex},
-		{'X', print_HEX},
-		{'S', print_non_printable},
-		{'p', print_address},
-		{'r', print_reverse_string},
-		{'R', print_rot13},
+		{'x', print_hex}
+		/**
+		  *
+		  *{'o', print_oct},
+		  *{'u', print_unsigned},
+		  *{'X', print_HEX},
+		  *{'S', print_non_printable},
+		  *{'p', print_address},
+		  *{'r', print_reverse_string},
+		  *{'R', print_rot13}
+		  */
 	};
 	int i = 0;
 
 	while (i < 14)
 	{
 		if (ch == specifiers[i].c)
-			return (specifiers[i].function_ptr);
+			return (specifiers[i].func_ptr);
 		i++;
 	}
 	return (NULL);
@@ -46,7 +49,11 @@ int call_func(char ch, va_list pri)
 {
 	int (*ptr_to_function)(va_list pri) = get_function(ch);
 
+<<<<<<< HEAD
 	if (ptr_to_function != NULL)
+=======
+	if (*ptr_to_function != NULL)
+>>>>>>> 09a0a4f10d6631e689421af86177d0ebf9a9ae96
 		return (ptr_to_function(pri));
 	return (0);
 }
