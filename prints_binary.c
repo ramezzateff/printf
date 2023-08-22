@@ -5,10 +5,11 @@
  *
  * Return: count of bytes.
  */
-int print_binay(va_list pri)
+int print_binary(va_list pri)
 {
-	int a[20], rem, i = 0, count;
+	int count = 0;
 	unsigned int numb = va_arg(pri, unsigned int);
+	unsigned int mask = 1 << (sizeof(unsigned int) * 8 - 1);
 
 	if (numb == 0)
 	{
@@ -16,20 +17,11 @@ int print_binay(va_list pri)
 		return (1);
 	}
 
-	while (numb != 0)
+	while (mask != 0)
 	{
-		rem = numb % 2;
-		a[i] = rem;
-		i++;
-		numb = numb / 2;
-	}
-
-	count = i;
-
-	for (i = count - 1; i >= 0; i--)
-	{
-		_putchar('0' + a[i]);
-		count--;
+		((numb & mask) != 0) ?  _putchar('1') :  _putchar('0');
+		count++;
+		mask >>= 1;
 	}
 	return (count);
 }

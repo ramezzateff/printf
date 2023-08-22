@@ -28,7 +28,7 @@ int print_oct(va_list pri)
 	for (i = count - 1; i >= 0; i--)
 	{
 		_putchar('0' + a[i]);
-		count++;
+		count--;
 	}
 	return (count);
 }
