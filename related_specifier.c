@@ -49,11 +49,8 @@ int call_func(char ch, va_list pri)
 {
 	int (*ptr_to_function)(va_list pri) = get_function(ch);
 
-<<<<<<< HEAD
 	if (ptr_to_function != NULL)
-=======
 	if (*ptr_to_function != NULL)
->>>>>>> 09a0a4f10d6631e689421af86177d0ebf9a9ae96
 		return (ptr_to_function(pri));
 	return (0);
 }
