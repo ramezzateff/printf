@@ -1,34 +1,39 @@
-#include "main.h"
 
+#include "main.h"
 /**
- * print_oct - print a octal number.
+ * print_oct - print a oct number.
  * @pri: argument from printf function.
  *
  * Return: count of bytes.
  */
 int print_oct(va_list pri)
 {
-	int a[30], rem, i = 0, count;
-	int numb = va_arg(pri, int);
+	unsigned int bin = va_arg(pri, unsigned int);
+	unsigned int temp = bin;
+	unsigned int temp2 = bin;
+	int arr_size = 0;
+	int i;
+	char *ptr;
 
-	if (numb == 0)
+	if (!bin)
+		return (_putchar('0'));
+	while (temp != 0)
 	{
-		_putchar('0');
-		return (1);
+		temp /= 8;
+		arr_size++;
 	}
-
-	while (numb != 0)
+	ptr = malloc(sizeof(*ptr) * arr_size);
+	if (ptr == NULL)
+		return (0);
+	for (i = arr_size - 1; i >= 0; i--)
 	{
-		rem = numb % 8;
-		a[i++] = rem;
-		numb = numb / 8;
+		ptr[i] = '0' + (bin % 8);
+		bin /= 8;
 	}
-	count = i;
-
-	for (i = count - 1; i >= 0; i--)
+	for (i = 0; i < arr_size - 1; i++)
 	{
-		_putchar('0' + a[i]);
-		count--;
+		_putchar(ptr[i]);
 	}
-	return (count);
+	_putchar('0' + (temp2 % 8));
+	return (arr_size);
 }
