@@ -12,7 +12,7 @@ int print_address(va_list pri)
 	char buffer[100];
 	int i = 0;
 
-	sprintf(buffer, "Memory Address: %p", p);
+	sprintf(buffer, "%p", p);
 	for (i = 0; buffer[i] != '\0'; i++)
 		_putchar(buffer[i]);
 	return (strlen(buffer));
