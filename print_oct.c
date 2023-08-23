@@ -10,7 +10,8 @@ int print_oct(va_list pri)
 {
 	unsigned int bin = va_arg(pri, unsigned int);
 	unsigned int temp = bin;
-	unsigned int arr_size = 0;
+	unsigned int temp2 = bin;
+	int arr_size = 0;
 	int i;
 	char *ptr;
 
@@ -23,7 +24,7 @@ int print_oct(va_list pri)
 	}
 	ptr = malloc(sizeof(*ptr) * arr_size);
 	if (ptr == NULL)
-		return (NULL);
+		return (0);
 	for (i = arr_size; i >= 0; i--)
 	{
 		ptr[i] = '0' + (bin % 8);
