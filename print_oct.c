@@ -25,7 +25,7 @@ int print_oct(va_list pri)
 	ptr = malloc(sizeof(*ptr) * arr_size);
 	if (ptr == NULL)
 		return (0);
-	for (i = arr_size; i >= 0; i--)
+	for (i = arr_size - 1; i >= 0; i--)
 	{
 		ptr[i] = '0' + (bin % 8);
 		bin /= 8;

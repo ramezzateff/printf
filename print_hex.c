@@ -25,7 +25,7 @@ int print_hex(va_list pri)
 	ptr = malloc(sizeof(*ptr) * arr_size);
 	if (ptr == NULL)
 		return (0);
-	for (i = arr_size; i >= 0; i--)
+	for (i = arr_size - 1; i >= 0; i--)
 	{
 		if (bin % 16 > 9)
 			ptr[i] = 'a' + ((bin % 16) - 10);
