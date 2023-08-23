@@ -5,7 +5,7 @@
  *
  * Return: count of bytes.
  */
-int print_binary(va_list pri)
+int print_binay(va_list pri)
 {
 	unsigned int bin = va_arg(pri, unsigned int);
 	unsigned int temp = bin;

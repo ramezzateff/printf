@@ -38,6 +38,8 @@ int print_rot13(va_list pri);
 int print_unsigned(va_list pri);
 int print_non_printable(va_list pri);
 
+int (*get_function(char ch))(va_list pri);
+int call_func(char ch, va_list pri);
 
 
 int (*get_function(char ch))(va_list pri);
