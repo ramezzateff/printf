@@ -1,11 +1,12 @@
 #ifndef _PRINTF_H
 #define _PRINTF_H
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-
+#include <string.h>
 /**
   * struct char_function - structure that has character
   * and pointer to related function
