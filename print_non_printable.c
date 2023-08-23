@@ -8,7 +8,7 @@
 int print_non_printable(va_list pri)
 {
 	const char *str = va_arg(pri, const char *);
-	int count;
+	int count = 0;
 
 	while (*str)
 	{
