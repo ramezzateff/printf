@@ -7,28 +7,31 @@
  */
 int print_binary(va_list pri)
 {
-	int a[20], rem, i = 0, count;
-	int numb = va_arg(pri, int);
+	unsigned int bin = va_arg(pri, unsigned int);
+	unsigned int temp = bin;
+	unsigned int arr_size = 0;
+	int i;
+	char *ptr;
 
-	if (numb == 0)
+	if (!bin)
+		return (_putchar('0'));
+	while (temp != 0)
 	{
-		_putchar('0');
-		return (1);
+		temp /= 2;
+		arr_size++;
 	}
-
-	while (numb != 0)
+	ptr = malloc(sizeof(*ptr) * arr_size);
+	if (ptr == NULL)
+		return (NULL);
+	for (i = arr_size; i >= 0; i--)
 	{
-		rem = numb % 2;
-		a[i++] = rem;
-		numb = numb / 2;
+		ptr[i] = '0' + (bin % 2);
+		bin /= 2;
 	}
-
-	count = i;
-
-	for (i = count - 1; i >= 0; i--)
+	for (i = 0; i < arr_size - 1; i++)
 	{
-		_putchar('0' + a[i]);
-		count++;
+		_putchar(ptr[i]);
 	}
-	return (count);
+	_putchar('0' + (temp2 % 2));
+	return (arr_size);
 }

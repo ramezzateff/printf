@@ -15,12 +15,11 @@ int (*get_function(char ch))(va_list pri)
 		{'d', print_int},
 		{'i', print_int},
 		{'b', print_binary},
-		{'x', print_hex}
+		{'x', print_hex},
+		{'o', print_oct},
+		{'u', print_unsigned},
+		{'X', print_HEX}
 		/**
-		  *
-		  *{'o', print_oct},
-		  *{'u', print_unsigned},
-		  *{'X', print_HEX},
 		  *{'S', print_non_printable},
 		  *{'p', print_address},
 		  *{'r', print_reverse_string},

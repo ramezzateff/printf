@@ -1,14 +1,13 @@
-
 #include "main.h"
 /**
- * print_hex - print a oct number.
+ * print_HEX - print a oct number.
  * @pri: argument from printf function.
  *
  * Return: count of bytes.
  */
-int print_hex(va_list pri)
+int print_HEX(va_list pri)
 {
-	unsigned int bin = va_arg(pri, unsigned int);
+	unsigned int bin = va_arg(pri, unsigned int );
 	unsigned int temp = bin;
 	unsigned int arr_size = 0;
 	int i;
@@ -27,7 +26,7 @@ int print_hex(va_list pri)
 	for (i = arr_size; i >= 0; i--)
 	{
 		if (bin % 16 > 9)
-			ptr[i] = 'a' + ((bin % 16) - 10);
+			ptr[i] = 'A' + ((bin % 16) - 10);
 		else
 			ptr[i] = '0' + (bin % 16);
 		bin /= 16;
@@ -37,7 +36,7 @@ int print_hex(va_list pri)
 		_putchar(ptr[i]);
 	}
 	if (temp2 % 16 > 9)
-		_putchar('a' + ((temp2 % 16) - 10));
+		_putchar('A' + ((temp2 % 16) - 10));
 	else
 		_putchar('0' + (temp2 % 16));
 	return (arr_size);
