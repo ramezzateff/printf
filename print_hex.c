@@ -1,4 +1,3 @@
-
 #include "main.h"
 /**
  * print_hex - print a oct number.
@@ -22,10 +21,11 @@ int print_hex(va_list pri)
 		temp /= 16;
 		arr_size++;
 	}
+	arr_size++;
 	ptr = malloc(sizeof(*ptr) * arr_size);
 	if (ptr == NULL)
 		return (0);
-	for (i = arr_size - 1; i >= 0; i--)
+	for (i = arr_size - 2; i >= 0; i--)
 	{
 		if (bin % 16 > 9)
 			ptr[i] = 'a' + ((bin % 16) - 10);
@@ -41,5 +41,6 @@ int print_hex(va_list pri)
 		_putchar('a' + ((temp2 % 16) - 10));
 	else
 		_putchar('0' + (temp2 % 16));
+	free(ptr);
 	return (arr_size);
 }

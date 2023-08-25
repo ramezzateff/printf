@@ -19,10 +19,10 @@ int (*get_function(char ch))(va_list pri)
 		{'o', print_oct},
 		{'u', print_unsigned},
 		{'X', print_HEX},
-		{'r', print_reverse_string}
+		{'r', print_reverse_string},
+		{'p', print_address}
 		/**
 		  *{'S', print_non_printable},
-		  *{'p', print_address},
 		  *{'R', print_rot13}
 		  */
 	};
