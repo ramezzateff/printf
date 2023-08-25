@@ -32,6 +32,7 @@ int print_binary(va_list pri);
 int print_hex(va_list pri);
 int print_oct(va_list pri);
 int print_HEX(va_list pri);
+int print_HEX_helper(char c);
 int print_address(va_list pri);
 int print_S(va_list pri);
 int print_reverse_string(va_list pri);
